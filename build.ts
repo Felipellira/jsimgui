@@ -231,8 +231,7 @@ const buildWasm = (cfg: BuildConfig) => {
         "-sEXPORT_NAME=MainExport",
 
         "-DIMGUI_DISABLE_OBSOLETE_FUNCTIONS=1",
-        "-Oz",
-        "-flto",
+        "-O0",
         "-sMALLOC=dlmalloc",
         "-sALLOW_MEMORY_GROWTH=1",
         "-sASSERTIONS=1",
