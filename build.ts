@@ -196,6 +196,8 @@ const buildWasm = (cfg: BuildConfig) => {
 
         "./src/imguizmo/imguizmo.cpp",
         "./third_party/ImGuizmo/ImGuizmo.cpp",
+
+        "./src/dockbuilder/dockbuilder.cpp",
     ] as const;
 
     const includeDirs = [

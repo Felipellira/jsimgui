@@ -160,6 +160,7 @@ export function generateImGuiBindings(): void {
     cpSync("./src/imgui/api/ts", "./bindgen/ts", { recursive: true });
     cpSync("./src/imnodes/imnodes.ts", "./bindgen/ts/imnodes.ts");
     cpSync("./src/imguizmo/imguizmo.ts", "./bindgen/ts/imguizmo.ts");
+    cpSync("./src/dockbuilder/dockbuilder.ts", "./bindgen/ts/dockbuilder.ts");
     mkdirSync("./bindgen/ts", { recursive: true });
     mkdirSync("./bindgen/cpp", { recursive: true });
     writeFileSync("./bindgen/ts/imgui.ts", ts);
