@@ -6,37 +6,23 @@ export const Mod = {
         // biome-ignore lint/suspicious/noExplicitAny: _
         let MainExport: any;
 
-        console.log("[jsimgui] init called", { enableFreeType, extensions, loaderPath });
-
-        try {
-            if (loaderPath) {
-                MainExport = await import(loaderPath);
-            } else if (enableFreeType) {
-                MainExport = extensions
-                    ? // @ts-expect-error
-                      await import("./wasm/loader-freetype-extensions.em.js")
-                    : // @ts-expect-error
-                      await import("./wasm/loader-freetype.em.js");
-            } else {
-                MainExport = extensions
-                    ? // @ts-expect-error
-                      await import("./wasm/loader-extensions.em.js")
-                    : // @ts-expect-error
-                      await import("./wasm/loader.em.js");
-            }
-
-            console.log("[jsimgui] import done, MainExport:", typeof MainExport);
-            console.log("[jsimgui] MainExport keys:", MainExport ? Object.keys(MainExport) : "null");
-            console.log("[jsimgui] MainExport.default:", typeof MainExport?.default);
-
-            Mod.export = await MainExport.default();
-
-            console.log("[jsimgui] Mod.export:", typeof Mod.export);
-            console.log("[jsimgui] Mod.export.FS:", typeof Mod.export?.FS);
-        } catch (e) {
-            console.error("[jsimgui] init FAILED:", e);
-            throw e;
+        if (loaderPath) {
+            MainExport = await import(loaderPath);
+        } else if (enableFreeType) {
+            MainExport = extensions
+                ? // @ts-expect-error
+                  await import("./wasm/loader-freetype-extensions.em.js")
+                : // @ts-expect-error
+                  await import("./wasm/loader-freetype.em.js");
+        } else {
+            MainExport = extensions
+                ? // @ts-expect-error
+                  await import("./wasm/loader-extensions.em.js")
+                : // @ts-expect-error
+                  await import("./wasm/loader.em.js");
         }
+
+        Mod.export = await MainExport.default();
     },
 };
 
