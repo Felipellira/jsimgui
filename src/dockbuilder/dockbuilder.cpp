@@ -15,9 +15,8 @@ bind_fn("DockBuilder_DockWindow", [](std::string window_name, unsigned int node_
 
 bind_fn("DockBuilder_AddNode", [](unsigned int node_id, int flags) {
     printf("[DockBuilder C++] AddNode(%u, %d)\n", node_id, flags);
-    auto result = ImGui::DockBuilderAddNode(node_id, static_cast<ImGuiDockNodeFlags>(flags));
-    printf("[DockBuilder C++] AddNode returned %u\n", result);
-    return result;
+    ImGui::DockBuilderAddNode(node_id, static_cast<ImGuiDockNodeFlags>(flags));
+    printf("[DockBuilder C++] AddNode done\n");
 });
 
 bind_fn("DockBuilder_RemoveNode", [](unsigned int node_id) {

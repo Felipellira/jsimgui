@@ -14,8 +14,8 @@ export const DockBuilder = {
         Mod.export.DockBuilder_DockWindow(window_name, node_id);
     },
 
-    AddNode(node_id: number = 0, flags: number = 0): number {
-        return Mod.export.DockBuilder_AddNode(node_id, flags);
+    AddNode(node_id: number = 0, flags: number = 0): void {
+        Mod.export.DockBuilder_AddNode(node_id, flags);
     },
 
     RemoveNode(node_id: number): void {

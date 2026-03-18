@@ -7,7 +7,7 @@ export declare const DockBuilder: {
         Down: number;
     };
     DockWindow(window_name: string, node_id: number): void;
-    AddNode(node_id?: number, flags?: number): number;
+    AddNode(node_id?: number, flags?: number): void;
     RemoveNode(node_id: number): void;
     RemoveNodeChildNodes(node_id: number): void;
     SetNodePos(node_id: number, x: number, y: number): void;

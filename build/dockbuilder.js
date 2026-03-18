@@ -12,7 +12,7 @@ export const DockBuilder = {
         Mod.export.DockBuilder_DockWindow(window_name, node_id);
     },
     AddNode(node_id = 0, flags = 0) {
-        return Mod.export.DockBuilder_AddNode(node_id, flags);
+        Mod.export.DockBuilder_AddNode(node_id, flags);
     },
     RemoveNode(node_id) {
         Mod.export.DockBuilder_RemoveNode(node_id);
