@@ -233,7 +233,7 @@ const buildWasm = (cfg: BuildConfig) => {
         "-DIMGUI_DISABLE_OBSOLETE_FUNCTIONS=1",
         "-Oz",
         "-flto",
-        "-sMALLOC=emmalloc",
+        "-sMALLOC=dlmalloc",
         "-sALLOW_MEMORY_GROWTH=1",
         "-sASSERTIONS=1",
     ] as const;
