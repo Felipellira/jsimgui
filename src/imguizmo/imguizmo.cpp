@@ -12,8 +12,8 @@ bind_fn("ImGuizmo_BeginFrame", []() {
 });
 
 bind_fn("ImGuizmo_SetDrawlist", []() {
-    printf("[ImGuizmo C++] SetDrawlist\n");
-    ImGuizmo::SetDrawlist();
+    printf("[ImGuizmo C++] SetDrawlist (foreground)\n");
+    ImGuizmo::SetDrawlist(ImGui::GetForegroundDrawList());
     printf("[ImGuizmo C++] SetDrawlist done\n");
 });
 
