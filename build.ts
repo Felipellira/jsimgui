@@ -78,6 +78,7 @@ const buildData = () => {
                     "-I./third_party/imgui/backends",
                     "-I./third_party/dear_bindings",
                     "-I./third_party/imnodes",
+                    "-I./third_party/ImGuizmo",
 
                     "-DJSIMGUI_BACKEND_WEBGL",
                     "-DJSIMGUI_BACKEND_WEBGPU",
@@ -192,6 +193,9 @@ const buildWasm = (cfg: BuildConfig) => {
 
         cfg.extensions ? "./src/imnodes/imnodes.cpp" : "",
         cfg.extensions ? "./third_party/imnodes/imnodes.cpp" : "",
+
+        "./src/imguizmo/imguizmo.cpp",
+        "./third_party/ImGuizmo/ImGuizmo.cpp",
     ] as const;
 
     const includeDirs = [
@@ -201,6 +205,7 @@ const buildWasm = (cfg: BuildConfig) => {
         "-I./third_party/imgui/backends",
         "-I./third_party/dear_bindings",
         "-I./third_party/imnodes",
+        "-I./third_party/ImGuizmo",
     ] as const;
 
     const compilerFlags = [

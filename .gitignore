@@ -3,7 +3,6 @@
 .venv/
 .vscode/
 cov_profile/
-build/
 bindgen/
 node_modules/
 compile_commands.json
